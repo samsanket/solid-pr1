@@ -1,0 +1,48 @@
+Problem Statement: Design a Modular Report Generation System
+Scenario:
+You are tasked with designing a Report Generation System for a financial company.
+The system supports different types of reports (e.g., PDF, Excel, CSV) for different financial data
+(e.g., TransactionReport, CustomerSummaryReport, RevenueReport).
+
+The company also wants to:
+
+Send these reports by Email or Upload to Cloud or Save to Disk.
+
+Easily add new report formats,
+data sources, and delivery mechanisms without modifying existing classes.
+
+You must ensure the design strictly adheres to the SOLID principles.
+
+
+-Single Responsibility Principle (SRP):
+Separate responsibilities for generating report data,
+formatting the report, and delivering the report.
+
+-Open/Closed Principle (OCP):
+New report types or delivery mechanisms can be added without modifying existing code.
+
+-Liskov Substitution Principle (LSP):
+You should be able to use any specific report formatter or delivery mechanism anywhere the base type is expected.
+
+-Interface Segregation Principle (ISP):
+ Clients should not be forced to depend on methods they do not use.
+
+-Dependency Inversion Principle (DIP):
+  High-level modules should not depend on low-level modules. Use abstractions.
+
+
+
+Task:
+Implement the following:
+
+ReportDataSource (interface) with concrete classes like TransactionDataSource, CustomerSummaryDataSource.
+
+ReportFormatter (interface) with implementations: PdfFormatter, ExcelFormatter, CsvFormatter.
+
+ReportDeliveryService (interface) with implementations:  EmailDeliveryService, CloudUploadService, DiskStorageService.
+
+A ReportGenerator that takes these interfaces and produces the report.
+
+
+
+
